@@ -20,6 +20,11 @@ import './assets/css/index.css';
 // 提示当前处在开发模式, false 不提示
 Vue.config.productionTip = false
 
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3000/heroes'
+
+Vue.prototype.axios = axios
+
 new Vue({
   // 配置实例选项 router 
   // router: appRouter,
