@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 3.使用AppHeader.vue组件 -->
+    <app-header></app-header>
+     <div class="container-fluid">
+       <div class="row">
+        <app-silder></app-silder>
+        <!-- <app-list></app-list> -->
+        <!-- 标识--路由出口 -->
+        <router-view></router-view>
+       </div>
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// 1.导入组件
+import AppHeader from './components/AppHeader.vue'
+import AppSilder from './components/AppSilder.vue'
+import AppList from './views/hero/AppList.vue'
 
 export default {
   name: 'app',
+  // 2.注册局部组件
   components: {
-    HelloWorld
+    AppHeader,
+    AppSilder,
+    AppList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
